@@ -1,5 +1,4 @@
-import {component$, useStylesScoped$, $, useSignal} from "@builder.io/qwik";
-import InputField from "../../components/input-field/input-field";
+import {component$, useStylesScoped$, $} from "@builder.io/qwik";
 import Button from "../../components/button/button";
 import Task from "./task/task";
 import STYLES from "./index.css?inline";
@@ -10,7 +9,6 @@ const addTask = $(()=>{
 	//Add it to the list
 });
 
-const newTaskValue = useSignal("");
 export default component$(() => {
 	useStylesScoped$(STYLES);
 	return (<div class={"flex flex-col items-center"}>
@@ -18,7 +16,7 @@ export default component$(() => {
 			<hr/>
 			<div id={"todo-list"} class={"mt-4"}>
 				<div class={"mb-4 inline-flex items-center justify-between content-between"}>
-					<input type={"text"} value={newTaskValue} class={"w-1/2"} placeholder={"New Task"}/>
+					<input type={"text"} class={"w-1/2"} placeholder={"New Task"}/>
 					<div>
 					</div>
 					<div class={"ml-4"}>
